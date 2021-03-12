@@ -70,6 +70,7 @@ header nav ul li a:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
   border-radius: 15px;
+  cursor: pointer;
 }
 
 /* HEADER / NAVBAR STYLE END */
@@ -77,11 +78,10 @@ header nav ul li a:hover {
 
 /* BACKGROUND/INTRO STYLE START */
 .hero {
-  padding: 15vh;
+  padding: 17vh;
   background: url("../image/background.jpg") no-repeat center fixed;
   background-size: cover;
   display: flex;
-  opacity: 1;
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -90,11 +90,12 @@ header nav ul li a:hover {
 }
 
 main {
-  padding: 15vh 0px;
   text-align: center;
   color: var(--secondary-color);
 }
-
+.intro-section {
+  padding: 15vh 0px;
+}
 main h1 {
   font-size: 36px;
   font-weight: 800;
@@ -125,9 +126,25 @@ button:hover {
 
 /* BACKGROUND/INTRO STYLE END */
 
+/* How to Play Seciton */
+.black-box {
+  color: var(--secondary-color);
+  font-size: 0.8em;
+  min-height: 600px;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.section-header-text {
+  font-size: 40px;
+  margin: 50px 20px 50px;
+}
+
+.section-text {
+  margin: 0px 20px 50px;
+}
+
 /* FOOTER/STYLE */
 footer {
-  padding: 20px 0;
   text-align: center;
   background-color: var(--primary-color);
   text-decoration: none;
@@ -149,7 +166,9 @@ footer {
 .footer > p, .copy {
   color: var(--tertiary-color);
 }
-
+footer ul li {
+  margin-bottom: 15px;
+}
 footer ul li:hover > a {
 
   color: var(--primary-color);
