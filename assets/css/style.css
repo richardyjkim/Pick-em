@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --tertiary-color: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+
+.display-none {
+  display: none;
+}
+header {
+  padding: 20px 35px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-image: url("../image/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 100%;
+  z-index: 9999;
+}
+
+header h1 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 30px;
+  color: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+header nav {
+  margin: 7px 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+}
+
+header nav ul li a {
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  list-style-type: none;
+  margin: 0;
+}
+
+header nav ul li a:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 15px;
+}
+
+/* HEADER / NAVBAR STYLE END */
+
+
+/* BACKGROUND/INTRO STYLE START */
+.hero {
+  padding: 15vh;
+  background: url("../image/background.jpg") no-repeat center fixed;
+  background-size: cover;
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-attachment: fixed;
+  background-position: 100%;
+}
+
+main {
+  padding: 15vh 0px;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+main h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 25px;
+}
+button {
+  display: inline-block;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 10px 30px;
+  margin:4px 2px;
+  border-radius: 15px;
+}
+button:hover {
+  background: black;
+  color: var(--secondary-color);
+  transition: var(--secondary-color) .3s ;
+}
+
+/* BACKGROUND/INTRO STYLE END */
+
+/* FOOTER/STYLE */
+footer {
+  padding: 20px 0;
+  text-align: center;
+  background-color: var(--primary-color);
+  text-decoration: none;
+  bottom: 0px;
+}
+
+.footer h2 {
+  color: var(--secondary-color);
+}
+
+.social{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  align-items:center;
+  list-style: none;
+}
+
+.footer > p, .copy {
+  color: var(--tertiary-color);
+}
+
+footer ul li:hover > a {
+
+  color: var(--primary-color);
+  border-bottom: 2px solid #fff;
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+/* FOOTER END */
