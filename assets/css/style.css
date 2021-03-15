@@ -82,7 +82,7 @@ header nav ul li a:hover {
 
 /* BACKGROUND/INTRO STYLE START */
 .hero {
-  padding: 17vh;
+  padding: 16vh 5vh 16vh 5vh;
   background: url("../image/background.jpg") no-repeat center fixed;
   background-size: cover;
   display: flex;
@@ -130,11 +130,43 @@ button:hover {
 
 /* BACKGROUND/INTRO STYLE END */
 
+/* Start Section */
+.black-box .start-container .label {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.black-box .start-container {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 3.5rem;
+}
+
+.black-box .start-container .daily-score .rank {
+  margin-left: 1.75rem;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.black-box .start-container .daily-score .rank .daily-label {
+  font-size: 1.05rem;
+  color: gray;
+  margin-right: 0.56rem;
+}
 /* How to Play Seciton */
 .black-box {
   color: var(--secondary-color);
   font-size: 0.8em;
-  min-height: 600px;
+  min-height: 650px;
+  min-width: 1500px;
   background-color: rgba(0,0,0,0.7);
 }
 
