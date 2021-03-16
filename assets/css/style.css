@@ -122,6 +122,7 @@ button {
   margin:4px 2px;
   border-radius: 15px;
 }
+
 button:hover {
   background: black;
   color: var(--secondary-color);
@@ -131,13 +132,13 @@ button:hover {
 /* BACKGROUND/INTRO STYLE END */
 
 /* Start Section */
-.black-box .start-container .label {
+.black-box .make-picks .label {
   font-size: 1.75rem;
   text-transform: uppercase;
   margin-left: 20px;
 }
 
-.black-box .start-container {
+.black-box .make-picks {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -147,8 +148,11 @@ button:hover {
   width: 100%;
   height: 3.5rem;
 }
+.black-box .make-picks {
+  border-bottom: 2px solid gray;
+} 
 
-.black-box .start-container .daily-score .rank {
+.black-box .make-picks .daily-score .rank {
   margin-left: 1.75rem;
   display: flex;
   -webkit-box-align: center;
@@ -156,7 +160,7 @@ button:hover {
   text-transform: uppercase;
 }
 
-.black-box .start-container .daily-score .rank .daily-label {
+.black-box .make-picks .daily-score .rank .daily-label {
   font-size: 1.05rem;
   color: gray;
   margin-right: 0.56rem;
