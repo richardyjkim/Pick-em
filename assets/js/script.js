@@ -1,9 +1,7 @@
 let startBtn = document.getElementById("start");
 let matchupBtn = document.getElementById("match-ups")
 let playBtn = document.getElementById("how-to-play");
-let leaderBtn = document.getElementById("leaderboard");
 let introSectionEl = document.getElementById("intro-section");
-let leaderboardEl = document.getElementById("leaderboard-section");
 let playSectionEl = document.getElementById("play-section");
 let startSectionEl = document.getElementById("start-section");
 let matchupSectionEl = document.getElementById("matchup-section");
@@ -21,7 +19,6 @@ playBtn.addEventListener("click", function(event) {
   introSectionEl.classList.add("display-none");
   playSectionEl.classList.remove("display-none");
   matchupSectionEl.classList.add("display-none");
-  leaderboardEl.classList.add("display-none");
 });
 
 matchupBtn.addEventListener("click", function(event){
@@ -29,14 +26,5 @@ matchupBtn.addEventListener("click", function(event){
   matchupSectionEl.classList.remove("display-none");
   playSectionEl.classList.add("display-none");
   startSectionEl.classList.add("display-none");
-  leaderboardEl.classList.add("display-none");
-});
-
-leaderBtn.addEventListener("click", function(event){
-  event.preventDefault();
-  leaderboardEl.classList.remove("display-none");
-  playSectionEl.classList.add("display-none");
-  startSectionEl.classList.add("display-none");
-  matchupSectionEl.classList.add("display-none");
   introSectionEl.classList.add("display-none");
-})
+});
