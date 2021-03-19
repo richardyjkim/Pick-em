@@ -45,6 +45,7 @@ fetch(
     });
     $("button").click(function () {
       let team = $(this).data("team");
+      localStorage.setItem("My Pick", team);
       console.log(team);
     });
   })
