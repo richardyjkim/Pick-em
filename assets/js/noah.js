@@ -4,7 +4,6 @@ const datesArray = [];
 const game = [];
 const picks = [];
 const gameContainerEl = document.querySelector("#games-container");
-const gamesListEl = document.querySelector("#games-list");
 
 // schedule
 fetch(
