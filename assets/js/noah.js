@@ -1,9 +1,9 @@
-const data = [];
-const dates = {};
-const datesArray = [];
-const game = [];
-const picks = [];
-const gameContainerEl = document.querySelector("#games-container");
+var data = [];
+var dates = {};
+var datesArray = [];
+var game = [];
+var picks = [];
+var gameContainerEl = document.querySelector("#games-container");
 
 // schedule
 fetch(
