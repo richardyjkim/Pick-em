@@ -49,6 +49,9 @@ var dates = {};
 var datesArray = [];
 var game = [];
 
+// list of games from localStorage
+var myGames = [63882, "Min"]; // winning team
+
 // Fetch the Winning Team Data
 fetch(
   "https://api.sportsdata.io/v3/mlb/scores/json/Games/%7B2021PRE%7D?key=a608c9ea43e14291881e0e8e6617941e"
@@ -56,6 +59,8 @@ fetch(
   response.json()
     .then(function(data) {
       var game = data.filter(data => data.GameID === 63882);
+      gameDay = game[0].DateTime.split("T")[0];
+      gameTime = game[0].DateTime.split("T")[1];
       awayTeam = game[0].AwayTeam;
       homeTeam = game[0].HomeTeam;
       awayTeamRuns = game[0].AwayTeamRuns;
@@ -66,6 +71,6 @@ fetch(
       } else {
         winningTeam = awayTeam;
       }
-      console.log(winningTeam, awayTeam, awayTeamRuns, homeTeam, homeTeamRuns);
+      console.log(gameDay, gameTime, winningTeam, awayTeam, awayTeamRuns, homeTeam, homeTeamRuns);
     });
 });
