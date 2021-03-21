@@ -42,3 +42,30 @@ mypicksBtn.addEventListener("click", function(event){
   introSectionEl.classList.add("display-none");
   mypicksSectionEl.classList.remove("display-none");
 });
+
+
+var data = [];
+var dates = {};
+var datesArray = [];
+var game = [];
+
+// Fetch the Winning Team Data
+fetch(
+  "https://api.sportsdata.io/v3/mlb/scores/json/Games/%7B2021PRE%7D?key=a608c9ea43e14291881e0e8e6617941e"
+).then(function(response) {
+  response.json()
+    .then(function(data) {
+      var game = data.filter(data => data.GameID === 63882);
+      awayTeam = game[0].AwayTeam;
+      homeTeam = game[0].HomeTeam;
+      awayTeamRuns = game[0].AwayTeamRuns;
+      homeTeamRuns = game[0].HomeTeamRuns;
+
+      if (HomeTeamRuns => AwayTeamRuns) {
+        winningTeam = homeTeam;
+      } else {
+        winningTeam = awayTeam;
+      }
+      console.log(winningTeam, awayTeam, awayTeamRuns, homeTeam, homeTeamRuns);
+    });
+});
