@@ -8,7 +8,13 @@
   margin: 0;
   padding: 0;
 }
-
+.inLine-blockchild{
+  float:left
+} 
+#giph{
+  margin-left: 10px;
+  margin-top:-10px;
+}
 body {
   font-family: "Montserrat", sans-serif;
   color: black;
