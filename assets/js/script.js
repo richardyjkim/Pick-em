@@ -7,7 +7,6 @@ let playSectionEl = document.getElementById("play-section");
 let startSectionEl = document.getElementById("start-section");
 let matchupSectionEl = document.getElementById("matchup-section");
 let mypicksSectionEl = document.getElementById("mypicks-section");
-
 let myPicksContainerEl = document.querySelector(".mypicks-container");
 let accuracyEl = document.getElementById("accuracy");
 let accColorEl = document.getElementById("acc-color");
@@ -51,7 +50,7 @@ var dates = {};
 var datesArray = [];
 var game = [];
 
-// Sample list of games from localStorage
+// Sample list of games from localStorage. Required to mock demo the My Picks Page
 var myGames = {63797: 'PIT',
                63805: 'OAK',
                63808: 'MIL',
@@ -64,7 +63,7 @@ var myGames = {63797: 'PIT',
 
 let accArray = [];
 
-// Fetch the Winning Team Data
+// Fetch the My Picks Section Winning Team Data
 fetch(
   "https://api.sportsdata.io/v3/mlb/scores/json/Games/%7B2021PRE%7D?key=a608c9ea43e14291881e0e8e6617941e"
 ).then(function(response) {
@@ -73,14 +72,12 @@ fetch(
 
       for (i = 0; i < Object.keys(myGames).length; i++) {
 
-
         // Grab game details
         let gameNum = Object.keys(myGames)[i];
         let myPickTeam = myGames[gameNum];
 
         // Get Game JSON data
         let game = data.filter(data => data.GameID === Number(gameNum));
-
         let gameDay = moment(game[0].DateTime.split("T")[0]).format("L");
         let gameTime = moment(game[0].DateTime).format("LT");
         let awayTeam = game[0].AwayTeam;
@@ -93,8 +90,6 @@ fetch(
         } else {
           winningTeam = awayTeam;
         }
-
-        // console.log(gameNum, myPickTeam, gameDay, gameTime, winningTeam, homeTeam, homeRuns, awayTeam, awayRuns);
 
         // Log past games only 
         if (gameDay < moment().format("L")) {
@@ -125,6 +120,7 @@ fetch(
           let myPick = document.createElement("div");
           let myPickText = document.createElement("p");
           myPickText.textContent = myPickTeam;
+          // Color Picks
           if (myPickTeam === winningTeam) {
             myPickText.classList = "mypick-correct-color";
             accArray.push(1);
@@ -142,35 +138,25 @@ fetch(
           myPickWinningTeamText.textContent = winningTeam;
           myPickWinningTeam.appendChild(myPickWinningTeamText);
           myPickWinningTeam.classList = "mypicks-winning-team";
-          myPicksContainerEl.appendChild(myPickWinningTeam);  
-          
-
+          myPicksContainerEl.appendChild(myPickWinningTeam);
         }
       }
 
       // Accuracy Calculation
-
       let sum = 0;
       if (accArray.length > 0) {
-        
         for (i = 0; i < accArray.length; i++) {
           sum += accArray[i];
         }
-
         accPerc = sum / accArray.length*100; 
         accuracyEl.textContent = accPerc;
-
       }
 
-      // Color Accuracy
+      // Color the Accuracy
       if (accPerc >= 50) {
         accColorEl.classList = "acc-color-good";
       } else {
         accColorEl.classList = "acc-color-bad";
       }
-      
-
-
-      
     });
 });
