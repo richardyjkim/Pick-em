@@ -184,6 +184,7 @@ button:hover {
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
+  /* font-size: large; */
 }
 
 .mypicks-date, .mypicks-teams, .mypicks-mypick, .mypicks-winning-team {
@@ -209,8 +210,35 @@ button:hover {
   border-bottom-right-radius: 5px;
 }
 
+.mypick-incorrect-color {
+  background-color: red;
+  margin: 0px 60px 0px 60px;
+  border-radius: 5px;
+  border: solid;
+}
 
+.mypick-correct-color {
+  background-color: green;
+  margin: 0px 60px 0px 60px;
+  border-radius: 5px;
+  border: solid;
+}
 
+.acc-color-good {
+  background-color: green;
+  border-radius: 5px;
+  border: solid 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.acc-color-bad {
+  background-color: red;
+  border-radius: 5px;
+  border: solid 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
 /* How to Play Seciton */
 .black-box {

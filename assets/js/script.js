@@ -9,7 +9,8 @@ let matchupSectionEl = document.getElementById("matchup-section");
 let mypicksSectionEl = document.getElementById("mypicks-section");
 
 let myPicksContainerEl = document.querySelector(".mypicks-container");
-
+let accuracyEl = document.getElementById("accuracy");
+let accColorEl = document.getElementById("acc-color");
 
 startBtn.addEventListener("click", function(event) {
   event.preventDefault();
@@ -51,19 +52,17 @@ var datesArray = [];
 var game = [];
 
 // Sample list of games from localStorage
-// var myGames = {63797: 'PIT',
-//                63805: 'OAK',
-//                63808: 'MIL',
-//                63815: 'MIA',
-//                63812: 'DET',
-//                63861: 'PIT',
-//                63859: 'SEA',
-//                63865: 'NYY'
-// };
+var myGames = {63797: 'PIT',
+               63805: 'OAK',
+               63808: 'MIL',
+               63815: 'MIA',
+               63812: 'DET',
+               63861: 'PIT',
+               63859: 'SEA',
+               63865: 'NYY'
+};
 
-var myGames = {63797: 'PIT'};
-// console.log(Object.keys(myGames)[0]);
-
+let accArray = [];
 
 // Fetch the Winning Team Data
 fetch(
@@ -72,68 +71,106 @@ fetch(
   response.json()
     .then(function(data) {
 
-      // Grab game details
-      let gameNum = Object.keys(myGames)[0];
-      let myPickTeam = myGames[gameNum];
+      for (i = 0; i < Object.keys(myGames).length; i++) {
 
-      // Get Game JSON data
-      let game = data.filter(data => data.GameID === Number(gameNum));
 
-      let gameDay = moment(game[0].DateTime.split("T")[0]).format("L");
-      let gameTime = moment(game[0].DateTime).format("LT");
-      let awayTeam = game[0].AwayTeam;
-      let homeTeam = game[0].HomeTeam;
-      let awayRuns = game[0].AwayTeamRuns;
-      let homeRuns = game[0].HomeTeamRuns;
+        // Grab game details
+        let gameNum = Object.keys(myGames)[i];
+        let myPickTeam = myGames[gameNum];
 
-      if (homeRuns >= awayRuns) {
-        winningTeam = homeTeam;
-      } else {
-        winningTeam = awayTeam;
+        // Get Game JSON data
+        let game = data.filter(data => data.GameID === Number(gameNum));
+
+        let gameDay = moment(game[0].DateTime.split("T")[0]).format("L");
+        let gameTime = moment(game[0].DateTime).format("LT");
+        let awayTeam = game[0].AwayTeam;
+        let homeTeam = game[0].HomeTeam;
+        let awayRuns = game[0].AwayTeamRuns;
+        let homeRuns = game[0].HomeTeamRuns;
+
+        if (homeRuns >= awayRuns) {
+          winningTeam = homeTeam;
+        } else {
+          winningTeam = awayTeam;
+        }
+
+        // console.log(gameNum, myPickTeam, gameDay, gameTime, winningTeam, homeTeam, homeRuns, awayTeam, awayRuns);
+
+        // Log past games only 
+        if (gameDay < moment().format("L")) {
+
+          // Add Date Element to U/I
+          let myPickDate = document.createElement("div");
+          let myPickDateText = document.createElement("p");
+          let myPickTimeText = document.createElement("p");
+          myPickDateText.textContent = gameDay;
+          myPickTimeText.textContent = gameTime;
+          myPickDate.appendChild(myPickDateText);
+          myPickDate.appendChild(myPickTimeText);
+          myPickDate.classList = "mypicks-date";
+          myPicksContainerEl.appendChild(myPickDate);
+
+          // Add Match Ups to U/I
+          let myPickTeams = document.createElement("div");
+          let myPickTeamsHomeText = document.createElement("p");
+          let myPickTeamsAwayText = document.createElement("p");
+          myPickTeamsHomeText.textContent = homeTeam;
+          myPickTeamsAwayText.textContent = awayTeam;
+          myPickTeams.appendChild(myPickTeamsHomeText);
+          myPickTeams.appendChild(myPickTeamsAwayText);
+          myPickTeams.classList = "mypicks-teams";
+          myPicksContainerEl.appendChild(myPickTeams);
+
+          // Add My Pick Element to U/I
+          let myPick = document.createElement("div");
+          let myPickText = document.createElement("p");
+          myPickText.textContent = myPickTeam;
+          if (myPickTeam === winningTeam) {
+            myPickText.classList = "mypick-correct-color";
+            accArray.push(1);
+          } else {
+            myPickText.classList = "mypick-incorrect-color";
+            accArray.push(0);
+          }
+          myPick.appendChild(myPickText);
+          myPick.classList = "mypicks-mypick";
+          myPicksContainerEl.appendChild(myPick);
+
+          // Add Winning Team Element to U/I
+          let myPickWinningTeam = document.createElement("div");
+          let myPickWinningTeamText = document.createElement("p");
+          myPickWinningTeamText.textContent = winningTeam;
+          myPickWinningTeam.appendChild(myPickWinningTeamText);
+          myPickWinningTeam.classList = "mypicks-winning-team";
+          myPicksContainerEl.appendChild(myPickWinningTeam);  
+          
+
+        }
       }
 
-      console.log(gameNum, myPickTeam, gameDay, gameTime, winningTeam, homeTeam, homeRuns, awayTeam, awayRuns);
+      // Accuracy Calculation
 
-      // Add Date Element to U/I
-      let myPickDate = document.createElement("div");
-      let myPickDateText = document.createElement("p");
-      let myPickTimeText = document.createElement("p");
-      myPickDateText.textContent = gameDay;
-      myPickTimeText.textContent = gameTime;
-      myPickDate.appendChild(myPickDateText);
-      myPickDate.appendChild(myPickTimeText);
-      myPickDate.classList = "mypicks-date";
-      myPicksContainerEl.appendChild(myPickDate);
+      let sum = 0;
+      if (accArray.length > 0) {
+        
+        for (i = 0; i < accArray.length; i++) {
+          sum += accArray[i];
+        }
 
-      // Add Match Ups to U/I
-      let myPickTeams = document.createElement("div");
-      let myPickTeamsHomeText = document.createElement("p");
-      let myPickTeamsAwayText = document.createElement("p");
-      myPickTeamsHomeText.textContent = homeTeam;
-      myPickTeamsAwayText.textContent = awayTeam;
-      myPickTeams.appendChild(myPickTeamsHomeText);
-      myPickTeams.appendChild(myPickTeamsAwayText);
-      myPickTeams.classList = "mypicks-teams";
-      myPicksContainerEl.appendChild(myPickTeams);
+        accPerc = sum / accArray.length*100; 
+        accuracyEl.textContent = accPerc;
 
-      // Add My Pick Element to U/I
-      let myPick = document.createElement("div");
-      let myPickText = document.createElement("p");
-      myPickText.textContent = myPickTeam;
-      myPick.appendChild(myPickText);
-      myPick.classList = "mypicks-mypick";
-      myPicksContainerEl.appendChild(myPick);
+      }
 
-      // Add Winning Team Element to U/I
-      let myPickWinningTeam = document.createElement("div");
-      let myPickWinningTeamText = document.createElement("p");
-      myPickWinningTeamText.textContent = winningTeam;
-      myPickWinningTeam.appendChild(myPickWinningTeamText);
-      myPickWinningTeam.classList = "mypicks-winning-team";
-      myPicksContainerEl.appendChild(myPickWinningTeam);
+      // Color Accuracy
+      if (accPerc >= 50) {
+        accColorEl.classList = "acc-color-good";
+      } else {
+        accColorEl.classList = "acc-color-bad";
+      }
+      
 
 
-
-
+      
     });
 });
