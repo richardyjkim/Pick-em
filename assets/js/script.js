@@ -13,8 +13,11 @@ let accColorEl = document.getElementById("acc-color");
 
 startBtn.addEventListener("click", function(event) {
   event.preventDefault();
+  matchupSectionEl.classList.add("display-none");
+  playSectionEl.classList.add("display-none");
+  startSectionEl.classList.add("display-none");
   introSectionEl.classList.add("display-none");
-  startSectionEl.classList.remove("display-none");
+  mypicksSectionEl.classList.remove("display-none");
 });
 
 playBtn.addEventListener("click", function(event) {
