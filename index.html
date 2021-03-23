@@ -8,17 +8,19 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
     integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/gamesearch.css">
   <title>Title</title>
 </head>
 
 <body>
   <!-- navigation tags - block level element -->
-  <header>
+  <header class="topstuff">
     <h1>
       <div>
       <div class="inLine-blockchild">
-      <a href="./index.html">
-        <div class="title"><i class="fas fa-trophy"></i> PICK'EM</div>
+      <a href="./index.html" class="clickables">
+        <div class="topbar"><i class="fas fa-trophy"></i> PICK'EM</div>
       </a>
     </div>
       <div id="giph" class="inLine-blockchild">
@@ -30,11 +32,11 @@
     <nav>
       <ul>
         <li>
-          <a id="mypicks" class="button">MY PICKS</a>
+          <a id="mypicks" class="clickables">MY PICKS</a>
         </li>
-        <li><a id="match-ups" class="button"> MATCH-UPS</a>
+        <li><a id="match-ups" class="clickables"> MATCH-UPS</a>
         </li>
-        <li><a id="how-to-play" class="button">How to Play</a>
+        <li><a id="how-to-play" class="clickables">How to Play</a>
         </li>
       </ul>
     </nav>
@@ -77,11 +79,11 @@
         <div class="matchup-container make-picks">
           <div class="period">
             <!-- add moment js would be great idea for "current date" -->
-            <div id="currentDate" class="label">My Past Picks</div>
+            <div id="currentDate" class="labelCS">My Past Picks</div>
           </div>
           <div class="daily-score">
             <div class="rank">
-              <div class="label">Accuracy Rate: <span id="acc-color"> <span id="accuracy">0</span>% </span></div>
+              <div class="labelCS">Accuracy Rate: <span id="acc-color"> <span id="accuracy">0</span>% </span></div>
             </div>
           </div>
         </div>
@@ -119,8 +121,27 @@
             </div>
           </div>
         </div>
-        <h2 class="subtitle">Today's Games <span id="games-list"></span></h2>
-            <div id="games-container" class="list-group"></div>
+        <div class="hero-body">
+          <div class="columns">
+              <div class="column is-half">
+          <form class="date-form">
+              <label class="label" id="label-text" for="gameday">Choose a date:</label>
+              <input class="input" type="date" id="gameday" name="gameday">
+              <input type="submit" class="submit">
+            </form>
+            <h2 id="team-select-title">WHO WILL WIN?</h2>
+            <div class="level team-select">
+              <button class="button is-large is-link">HOME</button>
+              <button class="button is-large is-danger">AWAY</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="subtitle">Today's Games <span id="games-list"></span></h2>
+              <div id="games-container" class="list-group"></div>
+        </div>
+      </div>
+      
       </div>
 
       <!-- how-to-play section -->
@@ -160,19 +181,18 @@
     </div>
   </section>
   <!-- footer starts -->
-  <footer class="footer">
+  <footer class="footer has-text-centered has-background-black py-3">
     <h2 id="Outro">Contact or Find Us On</h2>
     <div class="copy">
       &copy; All Rights are Reserved
     </div>
     <br></br>
-    <ul class="social">
-      <li><a href="https://www.github.com/richardyjkim"><i class="fas fa-baseball-ball"> Richard Kim</i></a></li>
-      <li><a href="https://www.github.com/AustinJohnAaro"><i class="fas fa-baseball-ball"></i> Austin Aaro</a></li>
-      <li><a href="https://www.github.com/campbefs"><i class="fas fa-baseball-ball"> Chris Campbell</i></a></li>
-      <li><a href="https://www.github.com/seyzho"><i class="fas fa-baseball-ball"> Khan</i><br></a></li>
-      <li><a href="https://www.github.com/noahschnur"><i class="fas fa-baseball-ball"> Noah Schnur</i><br></a></li>
-    </ul>
+    <div class="columns">
+        <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Richard Kim</i></a></div>
+        <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"></i> Austin Aaro</a></div>
+        <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Chris Campbell</i></a></div>
+        <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Khan Adams</i><br></a></div>
+        <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Noah Schnur</i><br></a></div>
     </div>
   </footer>
   <!-- footer end -->
