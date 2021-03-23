@@ -32,28 +32,32 @@ fetch(
       });
     });
     // Filter daily games
-    // console.log(data);
-    // let today = moment().format("MMM Do YY");
-    game = data.filter((games) => games.Day === "2021-03-19" /*today*/);
-    // console.log(game);
-    // console.log(game[0].HomeTeam, game[0].AwayTeam)
-    // console.log(datesArray);
-    datesArray = Object.entries(dates);
-    // Add buttons for teams
-    game.map((teams) => {
-      // Buttons for teams
-      // console.log(teams.HomeTeam, teams.AwayTeam)
-      const awayTeamEl = $("<button>");
-      const homeTeamEl = $("<button>");
-      awayTeamEl.addClass("list-item away-team mlb");
-      homeTeamEl.addClass("list-item home-team mlb");
-      awayTeamEl.data("team", teams.AwayTeam);
-      homeTeamEl.data("team", teams.HomeTeam);
-      awayTeamEl.text(teams.AwayTeam);
-      homeTeamEl.text(teams.HomeTeam);
-      $("#games-container").append(awayTeamEl);
-      $("#games-container").append(homeTeamEl);
-    });
+    let today     
+    let displayGames = function () {
+      today = $("#gameday").val()
+      game = data.filter((games) => games.Day === today);
+      console.log(game);
+
+      datesArray = Object.entries(dates);
+      // Add buttons for teams
+      game.map((teams) => {
+        // Buttons for teams
+        const div = $("<div>").addClass("card")
+        const teamInfo = $("<div>").addClass("card-content")
+        const awayTeamEl = $("<button>");
+        const homeTeamEl = $("<button>");
+        awayTeamEl.addClass("list-item away-team mlb button is-medium is-danger");
+        homeTeamEl.addClass("list-item home-team mlb button is-medium is-link");
+        awayTeamEl.data("team", teams.AwayTeam);
+        homeTeamEl.data("team", teams.HomeTeam);
+        awayTeamEl.text(teams.AwayTeam);
+        homeTeamEl.text(teams.HomeTeam);
+        teamInfo.append(awayTeamEl);
+        teamInfo.append(homeTeamEl);
+        div.append(teamInfo)
+        $("#gameCards").append(div)
+      });
+    }
     // User picks to localStorage
     $("button").click(function () {
       let team = $(this).data("team");
@@ -61,6 +65,7 @@ fetch(
       localStorage.setItem("My Pick", JSON.stringify(picks));
       console.log(team);
     });
+    $(".submit").on("click", displayGames)
   })
 
   .catch((err) => {
