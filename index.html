@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
     integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/gamesearch.css">
   <title>Baseball Pick the Winner</title>
 </head>
 
@@ -48,7 +50,7 @@
       <button id="close">Close</button>
     </div>
   </div>
-  
+
   <!-- Background intro section -->
   <section id="intro" class="hero">
     <div class="container">
@@ -84,7 +86,6 @@
       <div id="mypicks-section" class="black-box display-none">
         <div class="matchup-container make-picks">
           <div class="period">
-            <!-- add moment js would be great idea for "current date" -->
             <div id="currentDate" class="label">My Past Picks</div>
           </div>
           <div class="daily-score">
@@ -127,8 +128,27 @@
             </div>
           </div>
         </div>
-        <h2 class="subtitle">Today's Games <span id="games-list"></span></h2>
-            <div id="games-container" class="list-group"></div>
+        <div class="hero-body">
+          <div class="columns">
+            <div class="column">
+              <div class="date-form">
+                <label class="label" id="label-text" for="gameday">Choose a date:</label>
+                <input class="input" type="date" id="gameday" name="gameday">
+                <input type="submit" class="submit">
+              </div>
+              <h2 id="team-select-title">WHO WILL WIN?</h2>
+                <div class="level team-select">
+                  <button class="button is-large is-danger">AWAY</button>
+                  <button class="button is-large is-link">HOME</button>
+                </div>
+                <div class="columns">
+                  <div id="gameCards" class="column">
+
+                  </div>
+                </div>
+            </div>
+         </div>
+        </div>
       </div>
 
       <!-- how-to-play section -->
