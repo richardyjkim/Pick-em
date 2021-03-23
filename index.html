@@ -15,10 +15,18 @@
   <!-- navigation tags - block level element -->
   <header>
     <h1>
+      <div>
+      <div class="inLine-blockchild">
       <a href="./index.html">
         <div class="title"><i class="fas fa-trophy"></i> PICK'EM</div>
       </a>
+    </div>
+      <div id="giph" class="inLine-blockchild">
+        <iframe src="https://giphy.com/embed/3ohzdJKvFq7VYRhKhy" width="75" height="75" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      </div>
+    </div>
     </h1>
+
     <nav>
       <ul>
         <li>
@@ -58,22 +66,49 @@
       <div id="start-section" class="black-box display-none">
         <div class="start-container make-picks">
           <div class="period">
-            <h2 class="label">Place Holder</h2>
+            <h2 class="label"></h2>
           </div>
           <div class="daily-score">
             <div class="rank">
-              <div class="daily-label">this section will be gone</div>
+              <div class="daily-label"></div>
             </div>
           </div>
         </div>
         <br>
-        <p>I will link this part with match-up once match-up section is built.
-          <br>
-          since there is nothing in the section right now, it will display empty.
-          <br>
-          and mess-ups css. i dont want to make you all shock and confuse. so imma just leave as an placeholder for now.
-          thanks guys ;)
+        <p>
         </p>
+      </div>
+
+      <!-- My Picks section -->
+      <div id="mypicks-section" class="black-box display-none">
+        <div class="matchup-container make-picks">
+          <div class="period">
+            <!-- add moment js would be great idea for "current date" -->
+            <div id="currentDate" class="label">My Past Picks</div>
+          </div>
+          <div class="daily-score">
+            <div class="rank">
+              <div class="label">Accuracy Rate: <span id="acc-color"> <span id="accuracy">0</span>% </span></div>
+            </div>
+          </div>
+        </div>
+
+        <section class="mypicks-container">
+
+          <div class="header-date">
+            <p>Game Date</p>
+          </div>
+          <div class="header-teams">
+            <p>Match Up</p>
+          </div>
+          <div class="header-mypick">
+            <p>My Picks</p>
+          </div>
+          <div class="header-winning-team">
+            <p>Winning Team</p>
+          </div>
+
+        </section>
       </div>
       
       <!-- MATCH-UPS section -->
@@ -139,11 +174,11 @@
     </div>
     <br></br>
     <ul class="social">
-      <li><a href=""><i class="fas fa-baseball-ball"> Richard Kim</i></a></li>
-      <li><a href=""><i class="fas fa-baseball-ball"></i> Justin Aaro</a></li>
-      <li><a href=""><i class="fas fa-baseball-ball"> Chris Campbell</i></a></li>
-      <li><a href=""><i class="fas fa-baseball-ball"> Khan</i><br></a></li>
-      <li><a href="https://github.com/noahschnur"><i class="fas fa-baseball-ball"> Noah Schnur</i><br></a></li>
+      <li><a href="https://www.github.com/richardyjkim"><i class="fas fa-baseball-ball"> Richard Kim</i></a></li>
+      <li><a href="https://www.github.com/AustinJohnAaro"><i class="fas fa-baseball-ball"></i> Austin Aaro</a></li>
+      <li><a href="https://www.github.com/campbefs"><i class="fas fa-baseball-ball"> Chris Campbell</i></a></li>
+      <li><a href="https://www.github.com/seyzho"><i class="fas fa-baseball-ball"> Khan</i><br></a></li>
+      <li><a href="https://www.github.com/noahschnur"><i class="fas fa-baseball-ball"> Noah Schnur</i><br></a></li>
     </ul>
     </div>
   </footer>
@@ -151,6 +186,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
   <script src="assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/js/noah.js"></script>
 </body>
 
