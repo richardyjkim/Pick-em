@@ -5,6 +5,13 @@ var game = [];
 var picks = [];
 var gameContainerEl = document.querySelector("#games-container");
 
+// Modal
+window.onload = function () {
+  document.getElementById("close").onclick = function () {
+    document.getElementById("modal").style.display = "none"
+  };
+};
+
 // schedule
 fetch(
   "https://api.sportsdata.io/v3/mlb/scores/json/Games/%7B2021PRE%7D?key=a608c9ea43e14291881e0e8e6617941e"
@@ -24,8 +31,8 @@ fetch(
         ForecastWindSpeed: item.ForecastWindSpeed,
       });
     });
-    // console.log(data);
     // Filter daily games
+    // console.log(data);
     // let today = moment().format("MMM Do YY");
     game = data.filter((games) => games.Day === "2021-03-19" /*today*/);
     // console.log(game);
@@ -34,6 +41,7 @@ fetch(
     datesArray = Object.entries(dates);
     // Add buttons for teams
     game.map((teams) => {
+      // Buttons for teams
       // console.log(teams.HomeTeam, teams.AwayTeam)
       const awayTeamEl = $("<button>");
       const homeTeamEl = $("<button>");

@@ -85,6 +85,20 @@ header nav ul li a:hover {
 
 /* HEADER / NAVBAR STYLE END */
 
+/* Modal */
+#modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+/* Modal End */
 
 /* BACKGROUND/INTRO STYLE START */
 .hero {
