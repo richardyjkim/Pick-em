@@ -17,13 +17,13 @@ https://richardyjkim.github.io/my-first-project/
 ## Screenshots of  the application
 
 * homepage
-! [code] (./assets/images/homepage.png)
+![screenshot1](./assets/images/homepage.png)
 * matchups
-! [code] (./assets/images/matchups.png)
+![sreenshot2](./assets/images/matchups.png)
 * previous picks
-! [code] (./assets/images/pastpicks.png)
+![screenshot3](./assets/images/pastpicks.png)
 * how to play
-! [code] (./assets/images/howtoplay.png)
+![screenshot4](./assets/images/howtoplay.png)
 
 
 
