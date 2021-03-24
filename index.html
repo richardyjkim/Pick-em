@@ -18,15 +18,16 @@
   <header class="topstuff">
     <h1>
       <div>
-      <div class="inLine-blockchild">
-      <a href="./index.html" class="clickables">
-        <div class="topbar"><i class="fas fa-trophy"></i> PICK'EM</div>
-      </a>
-    </div>
-      <div id="giph" class="inLine-blockchild">
-        <iframe src="https://giphy.com/embed/3ohzdJKvFq7VYRhKhy" width="75" height="75" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <div class="inLine-blockchild">
+          <a href="./index.html" class="clickables">
+            <div class="topbar"><i class="fas fa-trophy"></i> PICK'EM</div>
+          </a>
+        </div>
+        <div id="giph" class="inLine-blockchild">
+          <iframe src="https://giphy.com/embed/3ohzdJKvFq7VYRhKhy" width="75" height="75" frameBorder="0"
+            class="giphy-embed" allowFullScreen></iframe>
+        </div>
       </div>
-    </div>
     </h1>
 
     <nav>
@@ -44,10 +45,12 @@
   <!-- End navigation -->
 
   <!-- Modal -->
-  <div id="modal">
-    <div class="modal-content">
-      <p>Good Luck!</p>
-      <button id="close">Close</button>
+  <div id="modal-section" class="display-none">
+    <div id="modal">
+      <div class="modal-content">
+        <p>Good Luck!</p>
+        <button id="close">Close</button>
+      </div>
     </div>
   </div>
 
@@ -113,16 +116,16 @@
 
         </section>
       </div>
-      
+
       <!-- MATCH-UPS section -->
       <div id="matchup-section" class="black-box display-none">
         <div class="matchup-container make-picks">
           <div class="period">
-            
-            
+
+
             <div id="currentDate" class="labelCS">Current Date</div>
           </div>
-          
+
           <div class="daily-score">
             <div class="rank">
               <div class="daily-label">Up-to-Date</div>
@@ -131,29 +134,29 @@
         </div>
         <div class="hero-body">
           <div class="columns">
-              <div class="column is-two-thirds">
-          <div class="date-form">
-              <label class="label" id="label-text" for="gameday">Choose a date:</label>
-              <input class="input" type="date" id="gameday" name="gameday">
-              <input type="submit" class="submit">
-          </div>
-            <h2 id="team-select-title">WHO WILL WIN?</h2>
-            <div class="level team-select">
-              <button class="button is-large is-danger">AWAY</button>
-              <button class="button is-large is-link">HOME</button>
-            </div>
-            <div class="columns">
-              <div id="gameCards" class="column">
+            <div class="column is-two-thirds">
+              <div class="date-form">
+                <label class="label" id="label-text" for="gameday">Choose a date:</label>
+                <input class="input" type="date" id="gameday" name="gameday">
+                <input type="submit" class="submit">
+              </div>
+              <h2 id="team-select-title">WHO WILL WIN?</h2>
+              <div class="level team-select">
+                <button class="button is-large is-danger">AWAY</button>
+                <button class="button is-large is-link">HOME</button>
+              </div>
+              <div class="columns">
+                <div id="gameCards" class="column">
 
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
+          <div>
 
+          </div>
         </div>
-      </div>
-      
+
       </div>
 
       <!-- how-to-play section -->
@@ -200,16 +203,21 @@
     </div>
     <br></br>
     <div class="columns">
-        <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Richard Kim</i></a></div>
-        <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"></i> Austin Aaro</a></div>
-        <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Chris Campbell</i></a></div>
-        <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Khan Adams</i><br></a></div>
-        <div class="column"><a class="clickables" href="https://github.com/noahschnur"><i class="fas fa-baseball-ball"> Noah Schnur</i><br></a></div>
+      <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Richard Kim</i></a></div>
+      <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"></i> Austin Aaro</a></div>
+      <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Chris Campbell</i></a></div>
+      <div class="column"><a class="clickables" href=""><i class="fas fa-baseball-ball"> Khan Adams</i><br></a></div>
+      <div class="column"><a class="clickables" href="https://github.com/noahschnur"><i class="fas fa-baseball-ball">
+            Noah Schnur</i><br></a></div>
     </div>
   </footer>
   <!-- footer end -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"></script>
   <script src="assets/js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/js/noah.js"></script>
