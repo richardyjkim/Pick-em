@@ -131,22 +131,26 @@
         </div>
         <div class="hero-body">
           <div class="columns">
-              <div class="column is-half">
-          <form class="date-form">
-              <label class="labelCS" id="label-text" for="gameday">Choose a date:</label>
+              <div class="column is-two-thirds">
+          <div class="date-form">
+              <label class="label" id="label-text" for="gameday">Choose a date:</label>
               <input class="input" type="date" id="gameday" name="gameday">
               <input type="submit" class="submit">
-            </form>
+          </div>
             <h2 id="team-select-title">WHO WILL WIN?</h2>
             <div class="level team-select">
-              <button class="button is-large is-link">HOME</button>
               <button class="button is-large is-danger">AWAY</button>
+              <button class="button is-large is-link">HOME</button>
+            </div>
+            <div class="columns">
+              <div id="gameCards" class="column">
+
+              </div>
             </div>
           </div>
         </div>
         <div>
-          <h2 class="subtitle">Today's Games <span id="games-list"></span></h2>
-              <div id="games-container" class="list-group"></div>
+
         </div>
       </div>
       

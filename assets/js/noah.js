@@ -56,15 +56,15 @@ fetch(
         teamInfo.append(homeTeamEl);
         div.append(teamInfo)
         $("#gameCards").append(div)
+        // User picks to localStorage
+        $("button").click(function () {
+          let team = $(this).data("team");
+          picks.push(team)
+          localStorage.setItem("My Pick", JSON.stringify(picks));
+          console.log(team);
+        });
       });
     }
-    // User picks to localStorage
-    $("button").click(function () {
-      let team = $(this).data("team");
-      picks.push(team)
-      localStorage.setItem("My Pick", JSON.stringify(picks));
-      console.log(team);
-    });
     $(".submit").on("click", displayGames)
   })
 
