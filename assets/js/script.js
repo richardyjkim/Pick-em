@@ -10,6 +10,7 @@ let mypicksSectionEl = document.getElementById("mypicks-section");
 let myPicksContainerEl = document.querySelector(".mypicks-container");
 let accuracyEl = document.getElementById("accuracy");
 let accColorEl = document.getElementById("acc-color");
+let modalSectionEl = document.getElementById("modal-section")
 
 startBtn.addEventListener("click", function(event) {
   event.preventDefault();
@@ -18,6 +19,7 @@ startBtn.addEventListener("click", function(event) {
   startSectionEl.classList.add("display-none");
   introSectionEl.classList.add("display-none");
   mypicksSectionEl.classList.remove("display-none");
+  modalSectionEl.classList.remove("display-none");
 });
 
 playBtn.addEventListener("click", function(event) {
