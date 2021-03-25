@@ -36,16 +36,11 @@ fetch(
     let displayGames = function () {
       today = $("#gameday").val()
       game = data.filter((games) => games.Day === today);
-      
-      // Separate gameId
-      gameId.map((gameNum) => {
-          const gameIdNumber = data.filter(data => data.GameID === Number(gameNum))
-          // data("gameId", gameNum.GameID)
-        });
         
       datesArray = Object.entries(dates);
       // Add buttons for teams
       game.map((teams) => {
+        console.log(teams.GameID)
         // Buttons for teams into cards
         const div = $("<div>").addClass("card")
         const teamInfo = $("<div>").addClass("card-content level")
@@ -55,6 +50,8 @@ fetch(
         homeTeamEl.addClass("list-item home-team mlb button is-medium is-link");
         awayTeamEl.data("team", teams.AwayTeam);
         homeTeamEl.data("team", teams.HomeTeam);
+        awayTeamEl.attr("id", teams.GameID);
+        homeTeamEl.attr("id", teams.GameID);
         awayTeamEl.text(teams.AwayTeam);
         homeTeamEl.text(teams.HomeTeam);
         teamInfo.append(awayTeamEl);
@@ -65,18 +62,28 @@ fetch(
         // User picks to localStorage
         awayTeamEl.click(function () {
           let team = $(this).data("team");
-          picks.push(team)
-          gameIdNumber = $(this).data("gameId")
-          gameId.push(gameIdNumber)
-          picker = [picks, gameId]
+          // picks.push(team)
+          let gameIdNumber = $(this).attr("id")
+          // gameId.push(gameIdNumber)
+          const awayPick = {
+            team: team,
+            gameId: gameIdNumber
+          }
+          picker = JSON.parse(localStorage.getItem("My Picks"))|| []
+          picker.push(awayPick)
           localStorage.setItem("My Picks", JSON.stringify(picker));
         });
         homeTeamEl.click(function () {
           let team = $(this).data("team");
-          picks.push(team)
-          gameIdNumber = $(this).data("gameId")
-          gameId.push(gameIdNumber)
-          picker = [picks, gameId]
+          // picks.push(team)
+          let gameIdNumber = $(this).attr("id")
+          // gameId.push(gameIdNumber)
+          const homePick = {
+            team: team,
+            gameId: gameIdNumber
+          }
+          picker = JSON.parse(localStorage.getItem("My Picks"))|| []
+          picker.push(homePick)
           localStorage.setItem("My Picks", JSON.stringify(picker));
         });
       });
