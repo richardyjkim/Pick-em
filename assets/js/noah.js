@@ -3,6 +3,7 @@ var dates = {};
 var datesArray = [];
 var game = [];
 var picks = [];
+var gameId = [];
 var gameContainerEl = document.querySelector("#games-container");
 
 // Modal
@@ -27,8 +28,7 @@ fetch(
         Day: item.Day.split("T")[0],
         AwayTeam: item.AwayTeam,
         HomeTeam: item.HomeTeam,
-        ForcastTempHigh: item.ForcastTempHigh,
-        ForecastWindSpeed: item.ForecastWindSpeed,
+        GameID: item.GameID,
       });
     });
     // Filter daily games
@@ -36,8 +36,13 @@ fetch(
     let displayGames = function () {
       today = $("#gameday").val()
       game = data.filter((games) => games.Day === today);
-      console.log(game);
-
+      
+      // Separate gameId
+      gameId.map((gameNum) => {
+          const gameIdNumber = data.filter(data => data.GameID === Number(gameNum))
+          // data("gameId", gameNum.GameID)
+        });
+        
       datesArray = Object.entries(dates);
       // Add buttons for teams
       game.map((teams) => {
@@ -50,27 +55,29 @@ fetch(
         homeTeamEl.addClass("list-item home-team mlb button is-medium is-link");
         awayTeamEl.data("team", teams.AwayTeam);
         homeTeamEl.data("team", teams.HomeTeam);
-        console.log(homeTeamEl.data("team"));
         awayTeamEl.text(teams.AwayTeam);
         homeTeamEl.text(teams.HomeTeam);
         teamInfo.append(awayTeamEl);
         teamInfo.append(homeTeamEl);
         div.append(teamInfo)
         $("#gameCards").append(div)
+        let gameId = data.filter(data => data.GameID);
         // User picks to localStorage
         awayTeamEl.click(function () {
           let team = $(this).data("team");
-          console.log(this)
           picks.push(team)
-          localStorage.setItem("My Pick", JSON.stringify(picks));
-          console.log(team);
+          gameIdNumber = $(this).data("gameId")
+          gameId.push(gameIdNumber)
+          picker = [picks, gameId]
+          localStorage.setItem("My Picks", JSON.stringify(picker));
         });
         homeTeamEl.click(function () {
           let team = $(this).data("team");
-          console.log(this)
           picks.push(team)
-          localStorage.setItem("My Pick", JSON.stringify(picks));
-          console.log(team);
+          gameIdNumber = $(this).data("gameId")
+          gameId.push(gameIdNumber)
+          picker = [picks, gameId]
+          localStorage.setItem("My Picks", JSON.stringify(picker));
         });
       });
     }

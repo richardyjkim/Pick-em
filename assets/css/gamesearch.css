@@ -1,0 +1,125 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --tertiary-color: #f5f5f5;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    color: black;
+  }
+  
+  .display-none {
+    display: none;
+  }
+
+  /* changes to header css */
+  .topbar{
+    font-size: 45px;
+    font-style: italic;
+  }
+  .topstuff {
+    padding: 20px 35px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-image: url("../image/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 100%;
+    z-index: 9999;
+  }
+  .topstuff h1 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 30px;
+    color: var(--secondary-color);
+  }
+  
+  .clickables {
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+  
+  .topstuff nav {
+    margin: 7px 0;
+  }
+  
+  .topstuff nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .topstuff nav ul li a {
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    list-style-type: none;
+    margin: 0;
+  }
+  
+  .topstuff nav ul li a:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  /* header css end */
+
+  /* matchups css */
+  #label-text {
+    font-size: 13px;
+  }
+  .submit {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    margin: 0px 0px 16px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px
+  }
+
+  .date-form {
+    display: flex;
+  }
+
+  #team-select-title {
+    font-size: 32px;
+    text-align: center;
+    margin: 100px 0px 50px 0px;
+  }
+
+  .team-select {
+    margin: 0px 0px 50px 0px;
+  }
+
+  /* matchups css end */
+
+
+  /* footer css */
+  #Outro {
+    font-size: 24px;
+    color: white;
+    font-weight: bolder;
+  }
+
+  .copy {
+    color: white;
+  }
+
+/* footer css end */
