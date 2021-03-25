@@ -62,9 +62,7 @@ fetch(
         // User picks to localStorage
         awayTeamEl.click(function () {
           let team = $(this).data("team");
-          // picks.push(team)
           let gameIdNumber = $(this).attr("id")
-          // gameId.push(gameIdNumber)
           const awayPick = {
             team: team,
             gameId: gameIdNumber
@@ -75,9 +73,7 @@ fetch(
         });
         homeTeamEl.click(function () {
           let team = $(this).data("team");
-          // picks.push(team)
           let gameIdNumber = $(this).attr("id")
-          // gameId.push(gameIdNumber)
           const homePick = {
             team: team,
             gameId: gameIdNumber
