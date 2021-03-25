@@ -1,7 +1,36 @@
-1: Work on your own branch 
-2: Once you're done working on your feature, push your branch 
-3: Make a pull request, ping the scrum master that you made one 
-4: Scrum master does a code review with either the team or the person who made the PR
-5: If all is well, merge the changes
-6: If changes are merged. The scrum master will then tell everyone in the group to commit whatever changes you have now to your own branch, checkout to the master branch then do a git pull. (It will take the latest changes on the master branch and bring it to their local machine)
+# PROJECT 1 - BASEBALL PICK'EM
 
+## User Story
+
+As a baseball fan I wanted to to choose a game winning team for the matches today and check results
+
+## LIVE URL
+
+https://richardyjkim.github.io/my-first-project/
+
+## Built with 
+* html
+* css
+* JavaScript
+* bulma
+
+## Screenshots of  the application
+
+* homepage
+![screenshot1](./assets/image/homepage.png)
+* matchups
+![sreenshot2](./assets/image/matchups.png)
+* previous picks
+![screenshot3](./assets/image/pastpicks.png)
+* how to play
+![screenshot4](./assets/image/howtoplay.png)
+
+
+
+## Contributors
+
+* Richard Kim
+* Austin Aro
+* Chris Campbell
+* Khan Adams
+* Noah Schnur

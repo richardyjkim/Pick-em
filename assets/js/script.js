@@ -10,17 +10,19 @@ let mypicksSectionEl = document.getElementById("mypicks-section");
 let myPicksContainerEl = document.querySelector(".mypicks-container");
 let accuracyEl = document.getElementById("accuracy");
 let accColorEl = document.getElementById("acc-color");
+let modalSectionEl = document.getElementById("modal-section")
 
-startBtn.addEventListener("click", function(event) {
+startBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  matchupSectionEl.classList.add("display-none");
+  matchupSectionEl.classList.remove("display-none");
   playSectionEl.classList.add("display-none");
   startSectionEl.classList.add("display-none");
   introSectionEl.classList.add("display-none");
-  mypicksSectionEl.classList.remove("display-none");
+  mypicksSectionEl.classList.add("display-none");
+  modalSectionEl.classList.remove("display-none");
 });
 
-playBtn.addEventListener("click", function(event) {
+playBtn.addEventListener("click", function (event) {
   event.preventDefault();
   startSectionEl.classList.add("display-none");
   introSectionEl.classList.add("display-none");
@@ -29,7 +31,7 @@ playBtn.addEventListener("click", function(event) {
   mypicksSectionEl.classList.add("display-none");
 });
 
-matchupBtn.addEventListener("click", function(event){
+matchupBtn.addEventListener("click", function (event) {
   event.preventDefault();
   matchupSectionEl.classList.remove("display-none");
   playSectionEl.classList.add("display-none");
@@ -38,7 +40,7 @@ matchupBtn.addEventListener("click", function(event){
   mypicksSectionEl.classList.add("display-none");
 });
 
-mypicksBtn.addEventListener("click", function(event){
+mypicksBtn.addEventListener("click", function (event) {
   event.preventDefault();
   matchupSectionEl.classList.add("display-none");
   playSectionEl.classList.add("display-none");
@@ -54,14 +56,15 @@ var datesArray = [];
 var game = [];
 
 // Sample list of games from localStorage. Required to mock demo the My Picks Page
-var myGames = {63797: 'PIT',
-               63805: 'OAK',
-               63808: 'MIL',
-               63815: 'MIA',
-               63812: 'DET',
-               63861: 'PIT',
-               63859: 'SEA',
-               63865: 'NYY'
+var myGames = {
+  63797: 'PIT',
+  63805: 'OAK',
+  63808: 'MIL',
+  63815: 'MIA',
+  63812: 'DET',
+  63861: 'PIT',
+  63859: 'SEA',
+  63865: 'NYY'
 };
 
 let accArray = [];
@@ -69,9 +72,9 @@ let accArray = [];
 // Fetch the My Picks Section Winning Team Data
 fetch(
   "https://api.sportsdata.io/v3/mlb/scores/json/Games/%7B2021PRE%7D?key=a608c9ea43e14291881e0e8e6617941e"
-).then(function(response) {
+).then(function (response) {
   response.json()
-    .then(function(data) {
+    .then(function (data) {
 
       for (i = 0; i < Object.keys(myGames).length; i++) {
 
@@ -151,7 +154,7 @@ fetch(
         for (i = 0; i < accArray.length; i++) {
           sum += accArray[i];
         }
-        accPerc = sum / accArray.length*100; 
+        accPerc = sum / accArray.length * 100;
         accuracyEl.textContent = accPerc;
       }
 

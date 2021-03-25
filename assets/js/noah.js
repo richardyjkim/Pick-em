@@ -48,7 +48,7 @@ fetch(
       game.map((teams) => {
         // Buttons for teams into cards
         const div = $("<div>").addClass("card")
-        const teamInfo = $("<div>").addClass("card-content")
+        const teamInfo = $("<div>").addClass("card-content level")
         const awayTeamEl = $("<button>");
         const homeTeamEl = $("<button>");
         awayTeamEl.addClass("list-item away-team mlb button is-medium is-danger");
