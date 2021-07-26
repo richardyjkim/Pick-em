@@ -15,7 +15,7 @@ As a baseball fan I wanted to to choose a game winning team for the matches toda
 
 
 ## Installation
-- Please visit Website: https://richardyjkim.github.io/my-first-project/
+- Please visit Website: https://richardyjkim.github.io/Pick-em/
 
 ## Built with 
 * html
